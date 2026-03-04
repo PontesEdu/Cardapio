@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 
 
 
-export default function SignIn() {
+export default function SignUp() {
 
   return (
     <div className="">
@@ -16,34 +16,45 @@ export default function SignIn() {
 
         <div>
           <Button>
-            Create account
+            Sign in
           </Button>
         </div>
 
 
       </div>
 
-      <div className="flex mt-30 w-full flex-col items-center justify-center gap-5">
+      <div className="flex mt-20 w-full flex-col items-center justify-center gap-5">
 
-        <h1 className="text-4xl font-semibold text-center tracking-tight">Access account</h1>
+        <h1 className="text-4xl font-semibold text-center tracking-tight">Create account</h1>
 
         <div
           className="w-full rounded-xl border-2 p-5 shadow-xl sm:w-87.5"
         >
           <form className="space-y-5">
             <div className="space-y-2">
+              <Label htmlFor="name">Nome:</Label>
+              <Input
+                type="text"
+                id="name"
+                placeholder="digite seu nome"
+                className="shadow-md"
+                required
+                // {...register('name')}
+              />
+            </div>
+            <div className="space-y-2">
               <Label htmlFor="email">Seu e-mail:</Label>
               <Input
                 type="email"
                 id="email"
-                placeholder="Digite seu e-mail"
+                placeholder="digite seu e-mail"
                 className="shadow-md"
                 required
                 // {...register('email')}
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password">senha:</Label>
+              <Label htmlFor="email">senha:</Label>
               <Input
                 type="password"
                 id="password"

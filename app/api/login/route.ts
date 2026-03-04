@@ -3,21 +3,19 @@ import bcrypt from "bcrypt"
 import { NextResponse } from "next/server"
 import z from "zod"
 
-
-
 const loginSchema = z.object({
   email: z.email({ message: "Email inválido" }),
-  password: z.string().min(6, { message: "Senha obrigatória" }),
+  password: z.string().min(6, { message: "Senha deve ter pelo menos 6 caracteres" }),
 })
 
 export async function POST(req: Request) {
-  const body = req.json()
+  const body = await req.json()
 
   const result = loginSchema.safeParse(body)
 
   if (!result.success) {
     return NextResponse.json(
-      { errors: result.error.flatten },
+      { errors: result.error.flatten() },
       { status: 400 }
     )
   }

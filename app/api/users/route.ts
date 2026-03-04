@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { createUser, getAllUsers } from "@/modules/users/service"
+import { createUser } from "@/modules/users/service"
 import bcrypt from "bcrypt"
 import z from "zod"
 
@@ -31,9 +31,4 @@ export async function POST(req: Request) {
       { status: 400 }
     )
   }
-}
-
-export async function GET() {
-  const users = await getAllUsers()
-  return NextResponse.json(users)
 }

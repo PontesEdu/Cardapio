@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import Link from "next/link";
+import { LoginForm } from "./login-form";
 
 
 
@@ -16,10 +16,10 @@ export default function SignUp() {
 
         <div>
           <Button>
-            Sign in
+            
+            <Link href="/auth/sign-in">Sign in</Link>
           </Button>
         </div>
-
 
       </div>
 
@@ -30,44 +30,7 @@ export default function SignUp() {
         <div
           className="w-full rounded-xl border-2 p-5 shadow-xl sm:w-87.5"
         >
-          <form className="space-y-5">
-            <div className="space-y-2">
-              <Label htmlFor="name">Nome:</Label>
-              <Input
-                type="text"
-                id="name"
-                placeholder="digite seu nome"
-                className="shadow-md"
-                required
-                // {...register('name')}
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="email">Seu e-mail:</Label>
-              <Input
-                type="email"
-                id="email"
-                placeholder="digite seu e-mail"
-                className="shadow-md"
-                required
-                // {...register('email')}
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="email">senha:</Label>
-              <Input
-                type="password"
-                id="password"
-                placeholder="digite sua senha"
-                className="shadow-md"
-                required
-                // {...register('password')}
-              />
-            </div>
-            <Button className="w-full" type="submit">
-              Acessar Painel
-            </Button>
-          </form>
+          <LoginForm/>
         </div>
       </div>
     </div>

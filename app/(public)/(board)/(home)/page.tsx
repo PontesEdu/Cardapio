@@ -21,9 +21,9 @@ export default function Home() {
       
       {/* BANNER 2*/}
       <div className="flex flex-col justify-center gap-5 text-center items-center bg-muted py-10">
-        <h1 className="text-5xl font-bold">🍴Our Special Dishes</h1>
+        <h1 className="text-5xl font-bold">🍴 Nossos Pratos Especiais </h1>
         <p className="max-w-150 text-md text-muted-foreground">
-         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem, labore quasi temporibus consectetur suscipit sunt tenetur, veniam neque distinctio fugit in sint natus deserunt hic eaque dolores
+         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem, labore quasi temporibus consectetur suscipit sunt tenetur.
         </p>
       </div>
 

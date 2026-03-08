@@ -20,7 +20,7 @@ export async function DishesCarousel() {
           key={dish.id}
           className="basis-55 lg:basis-1/4"
         >
-          <div className="p-1">
+          <div className="">
             <DishCard 
               price={dish.price} 
               title={dish.title} 

@@ -58,7 +58,7 @@ export async function GET(request: Request) {
     return NextResponse.json({
       dishes,
     })
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { message: "Erro ao buscar pratos" },
       { status: 500 }

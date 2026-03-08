@@ -1,14 +1,12 @@
+import { DialogRegisterDishes } from "@/components/dialog-register-dishes";
 import { NavLink } from "@/components/nav-link";
 import { Home, Utensils } from "lucide-react";
-
-
 
 export function Header(){
 
   return (
     <header className="h-20 px-6 flex justify-between items-center bg-muted">
       <h1 className="text-2xl font-bold">MenuGo</h1>
-
 
       <nav className="flex gap-6 items-center">
         <NavLink href="/">
@@ -21,6 +19,9 @@ export function Header(){
           dishes
         </NavLink>
       </nav>
+
+      <DialogRegisterDishes />
+      
     </header>
   )
 }

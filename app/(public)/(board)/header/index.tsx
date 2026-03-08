@@ -7,7 +7,7 @@ export function Header(){
 
   return (
     <header className="h-20 px-6 flex justify-between items-center bg-muted">
-      <h1 className="text-2xl font-bold">LOGO</h1>
+      <h1 className="text-2xl font-bold">MenuGo</h1>
 
 
       <nav className="flex gap-6 items-center">
@@ -16,7 +16,7 @@ export function Header(){
           home
         </NavLink>
 
-        <NavLink href="/movie">
+        <NavLink href="/dishes">
           <Utensils className="h-5 w-5" />
           dishes
         </NavLink>

@@ -1,18 +1,17 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import Link from "next/link";
+import { LoginFormSignIn } from "./login-form-sign-in";
 
 
 
 export default function SignIn() {
 
   return (
-    <div className="">
+    <div className="relative">
 
-      <div className="flex justify-between sm:px-20 h-20 items-center ">
+      <div className="flex absolute inset-x-0 top-0 z-10 justify-between sm:px-20 h-20 items-center ">
 
-        <h1 className="text-2xl font-bold">LOGO</h1>
+        <h1 className="text-2xl font-bold">MenuGo</h1>
 
 
         <div>
@@ -25,40 +24,14 @@ export default function SignIn() {
 
       </div>
 
-      <div className="flex mt-30 w-full flex-col items-center justify-center gap-5">
+      <div className="flex h-screen w-full flex-col items-center justify-center gap-5">
 
-        <h1 className="text-4xl font-semibold text-center tracking-tight">Access account</h1>
+        <h1 className="text-5xl font-semibold text-center tracking-tight">Access account</h1>
 
         <div
           className="w-full rounded-xl border-2 p-5 shadow-xl sm:w-87.5"
         >
-          <form className="space-y-5">
-            <div className="space-y-2">
-              <Label htmlFor="email">Seu e-mail:</Label>
-              <Input
-                type="email"
-                id="email"
-                placeholder="Digite seu e-mail"
-                className="shadow-md"
-                required
-                // {...register('email')}
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="password">senha:</Label>
-              <Input
-                type="password"
-                id="password"
-                placeholder="digite sua senha"
-                className="shadow-md"
-                required
-                // {...register('password')}
-              />
-            </div>
-            <Button className="w-full" type="submit">
-              Acessar Painel
-            </Button>
-          </form>
+          <LoginFormSignIn/>
         </div>
       </div>
     </div>

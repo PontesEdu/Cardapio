@@ -27,7 +27,7 @@ export async function POST(req: Request) {
 
   } catch (error) {
     return NextResponse.json(
-      { error: "Dados inválidos" },
+      { message: "Dados inválidos" },
       { status: 400 }
     )
   }

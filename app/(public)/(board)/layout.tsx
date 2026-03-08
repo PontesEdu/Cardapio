@@ -7,10 +7,10 @@ export default function BoardLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="max-w-7xl flex flex-col min-h-screen mx-auto">
+    <div className="max-w-405 flex flex-col min-h-screen mx-auto">
       <Header />
 
-      <main className="container mx-auto mb-10 ">
+      <main className="container mx-auto mb-10">
         {children}
       </main>
     </div>

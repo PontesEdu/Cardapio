@@ -1,17 +1,17 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { LoginForm } from "./login-form";
+import { LoginFormSignUp } from "./login-form-sign-up";
 
 
 
 export default function SignUp() {
 
   return (
-    <div className="">
+    <div className="relative">
 
-      <div className="flex justify-between sm:px-20 h-20 items-center ">
+      <div className="flex absolute inset-x-0 top-0 z-10 justify-between sm:px-20 h-20 items-center ">
 
-        <h1 className="text-2xl font-bold">LOGO</h1>
+        <h1 className="text-2xl font-bold">MenuGo</h1>
 
 
         <div>
@@ -23,14 +23,14 @@ export default function SignUp() {
 
       </div>
 
-      <div className="flex mt-20 w-full flex-col items-center justify-center gap-5">
+      <div className="flex h-screen w-full flex-col items-center justify-center gap-5">
 
-        <h1 className="text-4xl font-semibold text-center tracking-tight">Create account</h1>
+        <h1 className="text-5xl font-semibold text-center tracking-tight">Create account</h1>
 
         <div
           className="w-full rounded-xl border-2 p-5 shadow-xl sm:w-87.5"
         >
-          <LoginForm/>
+          <LoginFormSignUp/>
         </div>
       </div>
     </div>

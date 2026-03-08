@@ -12,14 +12,13 @@ import { toast } from "sonner"
 import { useRouter } from "next/navigation"
 
 export const loginFormSchema = z.object({
-  name: z.string(),
   email: z.email("Email inválido"),
   password: z.string().min(6, "Senha precisa ter 6 caracteres"),
 })
 
 export type LoginFormData = z.infer<typeof loginFormSchema>
 
-export function LoginForm() {
+export function LoginFormSignIn() {
   const {
     register,
     handleSubmit,
@@ -32,7 +31,7 @@ export function LoginForm() {
 
   async function onSubmit(data: LoginFormData) {
 
-    const response = await fetch("/api/users", {
+    const response = await fetch("/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -46,28 +45,13 @@ export function LoginForm() {
       return
     }
 
-    toast.success("Cadastro criado com sucesso!", {
-      action: {
-        label: "Login",
-        onClick: () => router.push(`/auth/sign-in?email=${data.email}`),
-      },
-    })
+    toast.success("Bem Vindo")
+
+    router.push(`/`)
   }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-
-      <div className="space-y-2">
-        <Label htmlFor="name">Nome:</Label>
-        <Input
-          type="text"
-          id="name"
-          placeholder="digite seu nome"
-          className="shadow-md"
-          required
-          {...register('name')}
-        />
-      </div>
 
       <div className="space-y-2">
         <Label htmlFor="email">Seu e-mail:</Label>

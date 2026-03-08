@@ -15,7 +15,7 @@ export async function POST(req: Request) {
 
   if (!result.success) {
     return NextResponse.json(
-      { errors: result.error.flatten() },
+      { message: result.error.flatten() },
       { status: 400 }
     )
   }
@@ -26,7 +26,7 @@ export async function POST(req: Request) {
 
   if (!user) {
     return NextResponse.json(
-      { error: "Credenciais inválidas" },
+      { message: "Credenciais inválidas" },
       { status: 401 }
     )
   }
@@ -38,7 +38,7 @@ export async function POST(req: Request) {
 
   if (!passwordMatch) {
     return NextResponse.json(
-      { error: "Credenciais inválidas" },
+      { message: "Credenciais inválidas" },
       { status: 401 }
     )
   }

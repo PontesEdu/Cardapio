@@ -1,25 +1,38 @@
 import { prisma } from "@/lib/prisma"
+import { Prisma } from "@prisma/client"
 
-type CreateDishDTO = {
-  title: string
-  description: string
-  price: number
-  userId: string
-}
 
-export async function createDish(data: CreateDishDTO) {
+export async function createDish(data: Prisma.DishUncheckedCreateInput) {
   return prisma.dish.create({
     data,
   })
 }
 
-export async function getAllDishes() {
-  return prisma.dish.findMany({
-    include: { user: true },
-  })
+
+interface GetDishesParams {
+  limit?: number
 }
 
-export async function updateDish(id: string, data: Partial<CreateDishDTO>) {
+export async function getDishesServices({ limit = 10 }: GetDishesParams) {
+  const dishes = await prisma.dish.findMany({
+    take: limit,
+    orderBy: {
+      createdAt: "desc",
+    },
+    select: {
+      id: true,
+      title: true,
+      description: true,
+      price: true,
+    },
+  })
+
+  return dishes
+}
+
+
+
+export async function updateDish(id: string, data: Partial<Prisma.DishUncheckedCreateInput>) {
   return prisma.dish.update({
     where: { id },
     data,

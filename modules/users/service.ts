@@ -8,12 +8,6 @@ export async function createUser(data: Prisma.UserCreateInput) {
   })
 }
 
-export async function getAllUsers() {
-  return prisma.user.findMany({
-    include: { dishes: true },
-  })
-}
-
 export async function findUserByEmail(email: string) {
   return prisma.user.findUnique({
     where: { email },

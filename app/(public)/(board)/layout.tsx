@@ -10,7 +10,7 @@ export default function BoardLayout({
     <div className="max-w-405 flex flex-col min-h-screen mx-auto">
       <Header />
 
-      <main className="container mx-auto mb-10">
+      <main className="container mx-auto mb-10 px-5">
         {children}
       </main>
     </div>
